@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIRE | Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="shortcut icon"
+href="../images/icons/favicon.ico"
+type="image/x-icon">
+</head>
+<body>
+
+<div id="loading">
+  Loading Admin Dashboard...
+</div>
+
+<div id="app" class="hidden">
+
+  <header class="header">
+    <h1>NOIRE ADMIN</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <section id="stats" class="stats"></section>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Add / Edit Product</h2>
+      <input id="name" placeholder="Product Name">
+      <input id="price" type="number" placeholder="Price">
+  <input id="image" placeholder="Image URL">
+
+<textarea
+  id="description"
+  placeholder="Product Description">
+</textarea>
+
+<input
+  id="stock"
+  type="number"
+  placeholder="Stock Quantity">
+
+<img id="preview" alt="Product Preview">
+      <button id="submitBtn">Save</button>
+      <button id="cancelBtn" class="hidden">Cancel</button>
+      <p id="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>
+Products
+<span id="productCount"></span>
+</h2>
+      <input id="searchProduct" placeholder="Search products...">
+      <div id="products"></div>
+    </section>
+
+    <section class="card">
+      <h2>Orders</h2>
+      <div id="orders"></div>
+    </section>
+  </main>
+
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

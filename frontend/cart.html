@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIRE | Shopping Bag</title>
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="account-header">
+
+  <a href="index.html" class="logo-link">
+  <h1>NOIRE</h1>
+</a>
+
+<nav class="account-nav">
+  <a href="index.html">SHOP</a>
+  <a href="wishlist.html">WISHLIST</a>
+  <a href="about.html">ABOUT</a>
+  <a href="contact.html">CONTACT</a>
+  <a href="account.html">ACCOUNT</a>
+</nav>
+</header>
+
+    <div class="blackicons">
+        <img src="images/icons/profile.svg" id="accountBtn" alt="Profile">
+        
+    </div>
+    
+
+    <section class="cart-container">
+
+        <h2 class="cart-title">SHOPPING BAG</h2>
+
+        <div class="cart-layout">
+
+            <!-- LEFT -->
+            <div class="cart-left">
+
+                <!-- 🔥 DYNAMIC ITEMS WILL COME HERE -->
+               <div id="cart-items">
+  <p>Loading cart...</p>
+</div>
+
+                <!-- EMPTY STATE -->
+             <p id="empty-cart" style="text-align:center; margin-top:40px;">
+    Your cart is empty. Start exploring our latest collection.
+</p>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="cart-right">
+
+                <div class="summary-box">
+                    <h4>ORDER SUMMARY</h4>
+
+                    <div class="line"></div>
+
+                    <div class="row">
+                        <span>Order Value</span>
+                        <span id="order-value">₹ 0.00</span>
+                    </div>
+
+                    <div class="row">
+                        <span>Estimated Delivery Fee</span>
+                        <span id="delivery-fee">₹ 0.00</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="row total">
+                        <span>Total</span>
+                        <span id="final-total">₹ 0.00</span>
+                    </div>
+
+                    <div class="promo">Add Promo Code →</div>
+
+                    <button class="checkout-btn" id="checkoutBtn">CHECKOUT</button>
+                    <button class="checkout-btn" id="cartLoginBtn" style="display:none;">SIGN IN</button>
+
+                    <div class="line"></div>
+
+                    <p style="text-align:center; margin-top:10px;">We Accept</p>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>SECURE PAYMENTS</strong><br>Your Details are Safe Secure</p>
+                    <p><strong>FREE RETURNS</strong><br>Easy returns within 30 days</p>
+                    <p><strong>NEED HELP ?</strong><br>Get In Touch With Our Support Team</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LOGIN MODAL -->
+<div class="overlay" id="overlay">
+  <div class="login-box">
+
+    <div class="login-header">
+      <h2>SIGN IN</h2>
+      <span id="closeBtn">✕</span>
+    </div>
+
+    <form id="loginForm" novalidate>
+
+  <p class="login-desc">
+    LOGIN WITH EMAIL & PASSWORD
+  </p>
+
+  <div class="row">
+    <input type="email" id="loginEmail" placeholder="Email">
+  </div>
+
+  <div class="row">
+    <input type="password" id="loginPassword" placeholder="Password">
+  </div>
+
+  <button type="button" id="loginBtn" class="verify-btn">LOGIN</button>
+  
+  <button type="button" id="signupBtn" class="verify-btn">
+  CREATE ACCOUNT
+</button>
+
+  <div class="divider">
+    <span></span>
+    <p>OR</p>
+    <span></span>
+  </div>
+
+  <button type="button" class="guest-btn" onclick="closeModal()">
+    CONTINUE AS GUEST
+  </button>
+
+</form>
+
+    <p class="secure">🔒 All data is kept secure</p>
+
+  </div>
+</div>
+
+
+    <!-- SEARCH -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <div id="searchResults"></div>
+        </div>
+    </div>
+<footer class="footer">
+
+  <div class="footer-logo">
+    <h2>NOIRE</h2>
+    <p>Modern Fashion. Timeless Style.</p>
+  </div>
+
+  <div class="footer-links">
+
+    <div>
+      <h4>SHOP</h4>
+      <a href="index.html">New Arrivals</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html" class="active">CART</a>
+    </div>
+
+    <div>
+      <h4>ACCOUNT</h4>
+      <a href="account.html">My Account</a>
+      <a href="orders.html">Orders</a>
+    </div>
+
+    <div>
+      <h4>SUPPORT</h4>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+    </div>
+
+  </div>
+
+  <div class="footer-copy">
+    © 2026 NOIRE. All Rights Reserved.
+  </div>
+
+</footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

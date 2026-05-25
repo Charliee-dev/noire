@@ -1,0 +1,57 @@
+
+---
+
+# 💼 RESUME LINE (use this exactly)
+
+> Built a full-stack e-commerce web application using Node.js, Express, MongoDB, and JWT authentication with features including cart management, order processing, and role-based admin dashboard.
+
+---
+
+# 🎤 HOW TO EXPLAIN IN INTERVIEW
+
+Say this:
+
+> I built a full-stack e-commerce system where users can browse products, add to cart, and place orders. I implemented JWT-based authentication and role-based access for admin features like product management and order tracking. The backend is built with Express and MongoDB, and I focused on proper state handling, secure APIs, and clean user experience.
+
+---
+
+# ❓ QUESTIONS THEY WILL ASK YOU
+
+### 1. How does your auth work?
+👉 JWT token stored in localStorage, verified via middleware
+
+---
+
+### 2. How do you protect admin routes?
+👉 Role stored in token → checked in backend middleware
+
+---
+
+### 3. How is cart handled?
+👉 Stored per user in MongoDB → fetched via token
+
+---
+
+### 4. What happens during order?
+👉 Cart → order collection → cart cleared
+
+---
+
+### 5. Biggest challenge?
+👉 Managing state between frontend + backend (cart sync, auth flow)
+
+---
+
+# 🧠 FINAL ADVICE
+
+Now do this:
+
+1. Push to GitHub  
+2. Add screenshots  
+3. Add live demo (if possible later)
+
+---
+
+You’ve built something most people don’t.
+
+👉 Now make sure people **see it clearly**.

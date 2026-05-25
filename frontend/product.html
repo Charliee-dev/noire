@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIRE | Product Details</title>
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html" class="logo-link">
+  <h1>NOIRE</h1>
+</a>
+
+<div class="blackicons">
+    <img src="images/icons/search.svg" id="searchBtn" alt="Search">
+    <img src="images/icons/profile.svg" id="accountBtn" alt="Profile">
+    
+    <div id="cartBtn" class="cart-icon">
+        <img src="images/icons/cart.svg" alt="Cart">
+        <span id="cart-count">0</span>
+    </div>
+</div>
+        
+<main class="product-container">
+
+    <!-- ✅ IMAGE -->
+<div class="product">
+    <img id="mainImage" src="" alt="Product Image">
+</div>
+
+
+
+    <!-- ✅ PRODUCT INFO -->
+<div class="title-product">
+
+  <div class="product-header">
+
+      <h2 id="productTitle"></h2>
+
+      <div class="hearticon" id="wishlistBtn">
+          <img src="images/icons/heart.svg" alt="Wishlist">
+      </div>
+
+  </div>
+
+        <!-- 🔥 FIX: Added ID -->
+        <p class="product-price" id="productPrice">₹ 0</p>
+<p class="stock-status" id="productStock"></p>
+        <p class="color-category" id="colorText"></p>
+
+<div id="colorContainer" class="variant-column"></div>
+
+        <!-- SIZES -->
+        <div class="size-container">
+            <button class="size">XS</button>
+            <button class="size">S</button>
+            <button class="size">M</button>
+            <button class="size">L</button>
+            <button class="size">XL</button>
+        </div>
+
+        <p id="size-error"></p>
+        <button class="add-btn">
+ADD TO CART
+</button>
+        <div class="product-info-section">
+
+  <div class="info-block">
+    <h3>Description</h3>
+<p id="productDescription"></p>
+  </div>
+
+  <div class="info-block">
+    <h3>Product Details</h3>
+    <ul>
+      <li>100% Cotton</li>
+      <li>Relaxed Fit</li>
+      <li>Ribbed Collar</li>
+      <li>Imported</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3>Shipping & Returns</h3>
+    <ul>
+      <li>Free delivery on orders above ₹2,999</li>
+      <li>30-day returns</li>
+      <li>Secure checkout</li>
+    </ul>
+  </div>
+    </div>
+
+
+
+
+</main>
+
+<section class="related-products">
+
+  <h2>You May Also Like</h2>
+
+ <div class="related-wrapper">
+
+  <button class="related-arrow left">
+    ←
+  </button>
+
+<div id="relatedGrid" class="related-carousel">
+  <p>Loading products...</p>
+</div>
+
+  <button class="related-arrow right">
+    →
+  </button>
+
+</div>
+
+</section>
+
+
+    
+<!-- LOGIN MODAL -->
+<div class="overlay" id="overlay">
+  <div class="login-box">
+
+    <div class="login-header">
+      <h2>SIGN IN</h2>
+      <span id="closeBtn">✕</span>
+    </div>
+
+    <form id="loginForm" novalidate>
+
+  <p class="login-desc">
+    LOGIN WITH EMAIL & PASSWORD
+  </p>
+
+  <div class="row">
+    <input type="email" id="loginEmail" placeholder="Email">
+  </div>
+
+  <div class="row">
+    <input type="password" id="loginPassword" placeholder="Password">
+  </div>
+
+  <button type="button" id="loginBtn" class="verify-btn">
+    LOGIN
+  </button>
+  
+  <button type="button" id="signupBtn" class="verify-btn">
+  CREATE ACCOUNT
+</button>
+
+  <div class="divider">
+    <span></span>
+    <p>OR</p>
+    <span></span>
+  </div>
+
+  <button type="button" class="guest-btn" onclick="closeModal()">
+    CONTINUE AS GUEST
+  </button>
+
+</form>
+    <p class="secure">🔒 All data is kept secure</p>
+
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <div id="searchResults"></div>
+  </div>
+</div>
+
+<!-- CART SLIDE -->
+<div id="cart-slide">
+  <div class="cart-content">
+    <img id="cart-img">
+    <div>
+      <h3 id="cart-name"></h3>
+      <p id="cart-price"></p>
+      <p id="cart-size"></p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+
+  <div class="footer-logo">
+    <h2>NOIRE</h2>
+    <p>Modern Fashion. Timeless Style.</p>
+  </div>
+
+  <div class="footer-links">
+
+    <div>
+      <h4>SHOP</h4>
+      <a href="index.html">New Arrivals</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html">Cart</a>
+    </div>
+
+    <div>
+      <h4>ACCOUNT</h4>
+      <a href="account.html">My Account</a>
+      <a href="orders.html">Orders</a>
+    </div>
+
+    <div>
+      <h4>SUPPORT</h4>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+    </div>
+
+  </div>
+
+  <div class="footer-copy">
+    © 2026 NOIRE. All Rights Reserved.
+  </div>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

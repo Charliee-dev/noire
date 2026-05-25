@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html"><h1>NOIRE</h1></a>
+
+<section class="checkout-container">
+
+  <h2>CHECKOUT</h2>
+
+  <div class="checkout-layout">
+
+    <!-- LEFT: ADDRESS -->
+    <div class="checkout-left">
+
+      <h3>DELIVERY DETAILS</h3>
+
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="text" id="phone" placeholder="Phone Number">
+      <input type="text" id="address" placeholder="Address">
+      <input type="text" id="city" placeholder="City">
+      <input type="text" id="pincode" placeholder="Pincode">
+
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <div class="checkout-right">
+
+      <h3>ORDER SUMMARY</h3>
+
+      <div id="summary-items"></div>
+
+      <div class="line"></div>
+
+      <p>Order Value: <span id="order-value">₹ 0</span></p>
+      <p>Delivery Fee: <span id="delivery-fee">₹ 0</span></p>
+
+      <div class="line"></div>
+
+      <h3>Total: <span id="final-total">₹ 0</span></h3>
+
+      <button id="placeOrderBtn">PLACE ORDER</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>
