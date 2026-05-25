@@ -375,6 +375,64 @@ filtered.forEach(product => {
 
 const signupBtn = document.getElementById("signupBtn");
 
+const resetPasswordBtn =
+document.getElementById("resetPasswordBtn");
+
+if (resetPasswordBtn) {
+
+  resetPasswordBtn.addEventListener(
+    "click",
+    async () => {
+
+      const email =
+        document.getElementById("resetEmail").value;
+
+      const newPassword =
+        document.getElementById("resetNewPassword").value;
+
+      const confirmPassword =
+        document.getElementById("resetConfirmPassword").value;
+
+      if (!email || !newPassword || !confirmPassword) {
+        showMessage("Fill all fields", "red");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        showMessage("Passwords do not match", "red");
+        return;
+      }
+
+      showMessage(
+        "Frontend Ready",
+        "green"
+      );
+
+    }
+  );
+
+}
+
+const forgotPasswordLink =
+document.getElementById("forgotPasswordLink");
+
+const resetSection =
+document.getElementById("resetSection");
+
+if (forgotPasswordLink && resetSection) {
+
+  forgotPasswordLink.addEventListener("click", () => {
+
+    if (resetSection.style.display === "none") {
+      resetSection.style.display = "block";
+    } else {
+      resetSection.style.display = "none";
+    }
+
+  });
+
+}
+
 if (signupBtn) {
   signupBtn.addEventListener("click", async () => {
 

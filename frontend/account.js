@@ -73,4 +73,51 @@ window.location.reload();
     });
   }
 
+const changeBtn =
+document.getElementById("changePasswordBtn");
+
+if(changeBtn){
+
+changeBtn.addEventListener("click", async()=>{
+
+const currentPassword =
+document.getElementById("currentPassword").value;
+
+const newPassword =
+document.getElementById("newPassword").value;
+
+const confirmPassword =
+document.getElementById("confirmPassword").value;
+
+if(newPassword !== confirmPassword){
+  alert("Passwords do not match");
+  return;
+}
+
+const res = await fetch(
+"http://localhost:5001/api/auth/change-password",
+{
+  method:"POST",
+  headers:{
+    "Content-Type":"application/json",
+    "Authorization":"Bearer " + token
+  },
+  body:JSON.stringify({
+    currentPassword,
+    newPassword
+  })
+});
+
+const data = await res.json();
+
+if(data.success){
+  alert("Password Updated Successfully");
+}else{
+  alert(data.message);
+}
+
+});
+
+}
+
 });

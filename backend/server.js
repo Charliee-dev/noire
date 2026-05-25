@@ -121,29 +121,59 @@ if (!emailRegex.test(email)) {
 
 app.post("/api/auth/login", async (req, res) => {
   try {
+
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email }).select("+password");
+    console.log("EMAIL:", email);
+
+    const user = await User.findOne({ email })
+      .select("+password");
+
+    console.log("USER FOUND:", !!user);
+
     if (!user) {
-      return res.json({ success: false, message: "Invalid credentials" });
+      return res.json({
+        success: false,
+        message: "Invalid credentials"
+      });
     }
 
-    const match = await bcrypt.compare(password, user.password);
+    console.log("HASH EXISTS:", !!user.password);
+
+    const match = await bcrypt.compare(
+      password,
+      user.password
+    );
+
+    console.log("PASSWORD MATCH:", match);
+
     if (!match) {
-      return res.json({ success: false, message: "Invalid credentials" });
+      return res.json({
+        success: false,
+        message: "Invalid credentials"
+      });
     }
 
-   const token = jwt.sign(
-  { id: user._id, role: user.role, email: user.email },
-  process.env.JWT_SECRET,
-  { expiresIn: "7d" }
-);
+    const token = jwt.sign(
+      {
+        id: user._id,
+        role: user.role,
+        email: user.email
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
 
-    res.json({ success: true, token });
+    res.json({
+      success: true,
+      token
+    });
 
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false });
+    res.status(500).json({
+      success: false
+    });
   }
 });
 
@@ -177,6 +207,67 @@ function adminMiddleware(req, res, next) {
   next();
 }
 
+app.post(
+  "/api/auth/change-password",
+  authMiddleware,
+  async (req, res) => {
+
+    try {
+
+      const {
+        currentPassword,
+        newPassword
+      } = req.body;
+
+      const user =
+        await User.findById(req.user.id)
+        .select("+password");
+
+      if (!user) {
+        return res.json({
+          success:false,
+          message:"User not found"
+        });
+      }
+
+      const match =
+        await bcrypt.compare(
+          currentPassword,
+          user.password
+        );
+
+      if (!match) {
+        return res.json({
+          success:false,
+          message:"Current password incorrect"
+        });
+      }
+
+      user.password =
+        await bcrypt.hash(
+          newPassword,
+          10
+        );
+
+      await user.save();
+
+      res.json({
+        success:true,
+        message:"Password updated"
+      });
+
+    } catch(err) {
+
+      console.error(err);
+
+      res.status(500).json({
+        success:false
+      });
+
+    }
+
+  }
+);
 
 // ===============================
 // 🚀 START SERVER

@@ -72,9 +72,38 @@ simplicity and timeless everyday style.
     <input type="email" id="loginEmail" placeholder="Email">
   </div>
 
+<p id="forgotPasswordLink" class="forgot-link">
+  Forgot Password?
+</p>
+
+<div id="resetSection" style="display:none;">
+
   <div class="row">
-    <input type="password" id="loginPassword" placeholder="Password">
+    <input type="email"
+           id="resetEmail"
+           placeholder="Email">
   </div>
+
+  <div class="row">
+    <input type="password"
+           id="resetNewPassword"
+           placeholder="New Password">
+  </div>
+
+  <div class="row">
+    <input type="password"
+           id="resetConfirmPassword"
+           placeholder="Confirm Password">
+  </div>
+
+  <button
+    type="button"
+    id="resetPasswordBtn"
+    class="verify-btn">
+    RESET PASSWORD
+  </button>
+
+</div>
 
   <button type="button" id="loginBtn" class="verify-btn">
     LOGIN

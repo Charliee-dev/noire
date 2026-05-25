@@ -1539,3 +1539,48 @@ button:active {
   text-decoration:none;
   color:inherit;
 }
+
+.change-password{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:1px solid #eee;
+}
+
+.change-password h3{
+  font-size:13px;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+.change-password input{
+  width:100%;
+  box-sizing:border-box;
+  padding:14px;
+  margin-bottom:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  background:#fafafa;
+  transition:.2s ease;
+}
+
+.change-password input:focus{
+  outline:none;
+  border-color:black;
+  background:white;
+}
+
+#changePasswordBtn{
+  width:100%;
+  padding:14px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  letter-spacing:1px;
+  margin-top:5px;
+}
+
+#changePasswordBtn:hover{
+  opacity:.9;
+}
