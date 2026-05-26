@@ -31,7 +31,8 @@ const allowedOrigins = [
   "http://127.0.0.1:8080",
   "http://localhost:8080",
   "http://localhost:3000",
-  "https://charliee-dev.github.io"
+  "https://charliee-dev.github.io",
+  "https://noire-beta.vercel.app"
 ];
 
 app.use(cors({
