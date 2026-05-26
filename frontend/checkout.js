@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5001/api/cart", {
+    const res = await fetch("https://noire-backend-6ikq.onrender.com/api/cart", {
       headers: {
         "Authorization": "Bearer " + token
       }
@@ -102,7 +102,7 @@ if (!token) {
     }
 
     try {
-      const res = await fetch("http://localhost:5001/api/order/place", {
+      const res = await fetch("https://noire-backend-6ikq.onrender.com/api/order/place", {
         method: "POST",
        headers: {
   "Content-Type": "application/json",

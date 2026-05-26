@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     container.innerHTML = "<p>Loading orders...</p>";
-    const res = await fetch("http://localhost:5001/api/order", {
+    const res = await fetch("https://noire-backend-6ikq.onrender.com/api/order", {
       headers: {
         "Authorization": "Bearer " + token
       }

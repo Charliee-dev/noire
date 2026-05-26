@@ -1,4 +1,4 @@
-const API = "http://localhost:5001";
+const API = "https://noire-backend-6ikq.onrender.com";
 
 export async function request(url, options = {}) {
   const token = localStorage.getItem("token");

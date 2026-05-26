@@ -95,7 +95,7 @@ if(newPassword !== confirmPassword){
 }
 
 const res = await fetch(
-"http://localhost:5001/api/auth/change-password",
+"https://noire-backend-6ikq.onrender.com/api/auth/change-password",
 {
   method:"POST",
   headers:{

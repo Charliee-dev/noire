@@ -1,5 +1,5 @@
     let currentVariant = null;
-    const API_BASE = "http://localhost:5001";
+    const API_BASE = "https://noire-backend-6ikq.onrender.com";
     console.log("JS WORKING");
 
     // ===============================

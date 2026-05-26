@@ -67,7 +67,7 @@ function showMessage(msg, color = "black") {
 
     try {
       // 🔥 STEP 1: CREATE RAZORPAY ORDER
-      const res = await fetch("http://localhost:5001/api/payment/create-order", {
+      const res = await fetch("https://noire-backend-6ikq.onrender.com/api/payment/create-order", {
         method: "POST",
        headers: {
   "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const data = await res.json();
         handler: async function (response) {
 
     // 🔐 STEP 1: VERIFY PAYMENT
-    const verifyRes = await fetch("http://localhost:5001/api/payment/verify", {
+    const verifyRes = await fetch("https://noire-backend-6ikq.onrender.com/api/payment/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ setTimeout(() => {
     return;
   }
     try {
-      const res = await fetch("http://localhost:5001/api/cart", {
+      const res = await fetch("https://noire-backend-6ikq.onrender.com/api/cart", {
         headers: {
           "Authorization": "Bearer " + token
         }
@@ -272,7 +272,7 @@ setTimeout(() => {
     window.removeItem = async function(productId, size) {
       
 
-      await fetch("http://localhost:5001/api/cart/remove", {
+      await fetch("https://noire-backend-6ikq.onrender.com/api/cart/remove", {
         method: "DELETE",
         headers: {
     "Content-Type": "application/json",
@@ -292,7 +292,7 @@ setTimeout(() => {
     // ===============================
     window.changeQty = async function(productId, size, change) {
 
-      await fetch("http://localhost:5001/api/cart/update", {
+      await fetch("https://noire-backend-6ikq.onrender.com/api/cart/update", {
         method: "PUT",
         headers: {
     "Content-Type": "application/json",
