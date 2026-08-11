@@ -28,6 +28,8 @@ app.use(
 const PORT = 5001;
 
 const allowedOrigins = [
+  "http://127.0.0.1:5500",
+  "http://localhost:5500",
   "http://127.0.0.1:8080",
   "http://localhost:8080",
   "http://localhost:3000",
@@ -35,21 +37,24 @@ const allowedOrigins = [
   "https://noire-beta.vercel.app"
 ];
 
-app.use(cors({
-  origin: function(origin, callback) {
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) {
+        return callback(null, true);
+      }
 
-    if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
 
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
+      console.log("❌ CORS blocked:", origin);
+      return callback(new Error(`CORS not allowed: ${origin}`));
+    },
+    credentials: true
+  })
+);
 
-    return callback(
-      new Error("CORS not allowed")
-    );
-  },
-  credentials: true
-}));
 app.use(express.json());
 
 app.use("/api/products", productRoutes);
