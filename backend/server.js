@@ -1,4 +1,5 @@
 const helmet = require("helmet");
+const path = require("path");
 
 const productRoutes = require("./routes/productRoutes");
 const adminRoutes = require("./routes/adminRoutes");
@@ -25,7 +26,7 @@ app.use(
     crossOriginResourcePolicy: false
   })
 );
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 const allowedOrigins = [
   "http://127.0.0.1:5500",
@@ -56,6 +57,7 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use("/api/products", productRoutes);
 app.use("/api/admin", adminRoutes);
@@ -279,5 +281,5 @@ app.post(
 // 🚀 START SERVER
 // ===============================
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
